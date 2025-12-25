@@ -25,7 +25,7 @@ jobs:
       - uses: st3v3nmw/lsfr-action@main
 ```
 
-That's it!
+The action runs `lsfr test` on every push to main and on pull requests.
 
 ## Usage
 
