@@ -1,0 +1,28 @@
+name: 'lsfr Test'
+description: 'Test coding challenges with lsfr - build complex systems from scratch'
+
+inputs:
+  working-directory:
+    description: 'Directory containing lsfr.yaml'
+    required: false
+    default: '.'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Go
+      uses: actions/setup-go@v6
+      with:
+        go-version: '1.25'
+
+    - name: Install lsfr
+      shell: bash
+      run: |
+        echo "Installing lsfr from github.com/st3v3nmw/lsfr@main"
+        go install "github.com/st3v3nmw/lsfr@main"
+
+    - name: Run lsfr tests
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        "${{ github.action_path }}/test.sh"
