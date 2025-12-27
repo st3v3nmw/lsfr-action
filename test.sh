@@ -9,7 +9,7 @@ NC='\033[0m' # No Color
 
 # Check if lsfr.yaml exists
 if [ ! -f "lsfr.yaml" ]; then
-  echo -e "${RED}Error: lsfr.yaml not found in current directory${NC}"
+  echo -e "${RED}lsfr.yaml not found in current directory${NC}"
   echo "Make sure you're running this action in a directory with an lsfr challenge."
   exit 1
 fi

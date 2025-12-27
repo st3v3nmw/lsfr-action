@@ -6,7 +6,7 @@ A GitHub Action for testing [lsfr](https://lsfr.io) challenges in your CI/CD pip
 
 ## Quick Start
 
-Add this workflow to your repository at `.github/workflows/lsfr.yml`:
+Add this workflow to your repository at `.github/workflows/lsfr.yaml`:
 
 ```yaml
 name: lsfr Tests
