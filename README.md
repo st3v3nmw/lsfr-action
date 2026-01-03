@@ -1,6 +1,6 @@
 # lsfr GitHub Action
 
-_Build complex systems from scratch_
+_Build distributed systems from scratch._
 
 A GitHub Action for testing [lsfr](https://lsfr.io) challenges in your CI/CD pipeline.
 
