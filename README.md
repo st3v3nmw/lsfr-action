@@ -1,15 +1,15 @@
-# lsfr GitHub Action
+# LittleClusters Test GitHub Action
 
 _Build distributed systems from scratch._
 
-A GitHub Action for testing [lsfr](https://lsfr.io) challenges in your CI/CD pipeline.
+A GitHub Action for testing [LittleClusters](https://littleclusters.com/) challenges in your CI/CD pipeline.
 
 ## Quick Start
 
-Add this workflow to your repository at `.github/workflows/lsfr.yaml`:
+Add this workflow to your repository at `.github/workflows/littleclusters.yaml`:
 
 ```yaml
-name: lsfr Tests
+name: Test
 
 on:
   push:
@@ -22,11 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: st3v3nmw/lsfr-action@main
+      - uses: littleclusters/test@main
 ```
 
-The action runs `lsfr test` on every push to main and on pull requests.
+The action runs `lc test --so-far` on every push to main and on pull requests.
 
 ## Usage
 
-For the full usage documentation, please see [this guide](https://lsfr.io/guides/ci-cd/#github-actions).
+For the full usage documentation, please see [this guide](https://littleclusters.com/guides/ci-cd/#github-actions).
