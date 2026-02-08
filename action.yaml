@@ -1,15 +1,15 @@
-name: lsfr Test
-description: Test coding challenges with lsfr
+name: Test
+description: Test coding challenges with lc
 
 inputs:
   working-directory:
-    description: Directory containing lsfr.yaml
+    description: Directory containing lc.state
     required: false
     default: '.'
-  lsfr-version:
-    description: Version of lsfr to install
+  lc-version:
+    description: Version of lc to install
     required: false
-    default: 'v0.1.0'
+    default: 'v0.2.0'
 
 runs:
   using: composite
@@ -19,19 +19,11 @@ runs:
       with:
         go-version: '1.25'
 
-    - name: Cache lsfr
-      uses: actions/cache@v5
-      id: cache-lsfr
-      with:
-        path: ~/go/bin/lsfr
-        key: lsfr-${{ runner.os }}-${{ runner.arch }}-${{ inputs.lsfr-version }}
-
-    - name: Install lsfr
-      if: steps.cache-lsfr.outputs.cache-hit != 'true'
+    - name: Install lc
       shell: bash
-      run: go install github.com/st3v3nmw/lsfr/cmd/lsfr@${{ inputs.lsfr-version }}
+      run: go install github.com/littleclusters/lc/cmd/lc@${{ inputs.lc-version }}
 
-    - name: Run lsfr tests
+    - name: Run tests
       shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: ${{ github.action_path }}/test.sh
