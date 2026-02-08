@@ -1,6 +1,6 @@
 # LittleClusters Test GitHub Action
 
-_Build distributed systems from scratch._
+_Learn distributed systems by building them from scratch._
 
 A GitHub Action for testing [LittleClusters](https://littleclusters.com/) challenges in your CI/CD pipeline.
 
